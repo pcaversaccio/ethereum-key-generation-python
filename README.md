@@ -60,7 +60,7 @@ print('private_key:', private_key.hex())
 print('eth addr: 0x' + addr.hex())
 ```
 You can find the original source file [here](https://github.com/pcaversaccio/ethereum-key-generation-python/blob/main/src/main.py).
-
+> In addition, there is another file called [`mass_keygen.py`] (https://github.com/pcaversaccio/ethereum-key-generation-python/blob/main/src/mass_keygen.py) that can be used to generate any number of Ethereum addresses. Currently, the threshold is set to 1'000'000.
 
 # Reference
 [1] https://www.arthurkoziel.com/generating-ethereum-addresses-in-python
