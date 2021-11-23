@@ -37,5 +37,5 @@ public_key = PublicKey.from_valid_secret(private_key).format(compressed=False)[1
 # corresponding ECDSA public key.
 addr = keccak_256(public_key).digest()[-20:]
 
-print('private_key:', private_key.hex())
-print('eth addr: 0x' + addr.hex())
+print("private_key:", private_key.hex())
+print("eth addr: 0x" + addr.hex())

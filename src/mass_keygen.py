@@ -10,7 +10,7 @@ def generate_address():
     addr = keccak_256(public_key).digest()[-20:]
     return private_key.hex(), addr.hex()
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     import timeit
     print(timeit.timeit(
         stmt="generate_address()",
