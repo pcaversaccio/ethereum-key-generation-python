@@ -1,15 +1,15 @@
 # Generating Ethereum Addresses in Python
-Due to its slow interpreter, Python is usually not a good choice when it comes to writing performant applications. The exception being Python modules which use an interface that calls C/C++ code. These modules are usually very fast, popular examples are [TensorFlow](https://www.tensorflow.org), [NumPy](https://numpy.org), or [SciPy](https://scipy.org). The steps for interfacing Python with C using [Ctypes](https://docs.python.org/3.9/library/ctypes.html) are usually:
+Due to its slow interpreter, Python is usually not a good choice when it comes to writing performant applications. The exception being Python modules which use an interface that calls C/C++ code. These modules are usually very fast, popular examples are [TensorFlow](https://www.tensorflow.org), [NumPy](https://numpy.org), or [SciPy](https://scipy.org). The steps for interfacing Python with C using [`ctypes`](https://docs.python.org/3.9/library/ctypes.html) are usually:
 1. Write C code functions.
 2. Compile the C code as a shared library.
 3. Write some Python code lines to _extract_ the C functions from the shared library.
 4. Run.
 
 Now, to generate Ethereum addresses we can use the following two Python modules which are both `C` based and have a good performance:
-- [coincurve](https://github.com/ofek/coincurve): Cross-platform Python CFFI bindings for `libsecp256k1`
-- [pysha3](https://github.com/tiran/pysha3): `SHA-3` wrapper for Python (with support for keccak)
+- [coincurve](https://github.com/ofek/coincurve): Cross-platform Python CFFI bindings for `libsecp256k1`.
+- [pysha3](https://github.com/tiran/pysha3): `SHA-3` wrapper for Python (with support for keccak).
 
-Generating Ethereum addresses is a 3-step process:
+Generating Ethereum addresses is a **3-step** process:
 1. Generate a private key.
 2. Derive the public key from the private key.
 3. Derive the Ethereum address from the public key.
@@ -59,7 +59,8 @@ addr = keccak_256(public_key).digest()[-20:]
 print('private_key:', private_key.hex())
 print('eth addr: 0x' + addr.hex())
 ```
-You can find the sourc file here.
+You can find the original source file [here](https://github.com/pcaversaccio/ethereum-key-generation-python/blob/main/src/main.py).
+
 
 # Reference
 [1] https://www.arthurkoziel.com/generating-ethereum-addresses-in-python
